@@ -3,7 +3,7 @@
 a sort-of front-end for Rsync
 
 [![Build Status](https://travis-ci.org/layer8x/syncr.svg)](https://travis-ci.org/layer8x/syncr)
-+[![Stories in Ready](https://badge.waffle.io/layer8x/syncr.png?label=ready&title=Ready)](https://waffle.io/layer8x/syncr)
+[![Stories in Ready](https://badge.waffle.io/layer8x/syncr.png?label=ready&title=Ready)](https://waffle.io/layer8x/syncr)
 
 ## Installation
 
