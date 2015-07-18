@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/layer8x/syncr.png?label=ready&title=Ready)](https://waffle.io/layer8x/syncr)
 # Syncr
 
 a sort-of front-end for Rsync
