@@ -6,11 +6,11 @@ require 'syncr/version'
 Gem::Specification.new do |spec|
   spec.name          = "syncr"
   spec.version       = Syncr::VERSION
-  spec.authors       = ["sapslaj"]
+  spec.authors       = ["sapslaj", "xNightMare"]
   spec.email         = ["saps.laj@gmail.com"]
 
   spec.summary       = %q{a sort-of front end for Rsync}
-  spec.homepage      = "sapslaj.github.io"
+  spec.homepage      = "https://github.com/layer8x/syncr"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "exe"
