@@ -24,9 +24,7 @@ class Syncr
   def initialize(options={})
     raise ArgumentError, "Requires local and external directories to sync" unless options[:local] && options[:external]
     @options = options
-    @listeners = {}
-    @listeners[:local] = Listen.to(options[:local], &listen_callback(options[:local], options[:external]))
-    @listeners[:external] = Listen.to(options[:external], &listen_callback(options[:external], options[:local])) if options[:two_way_sync]
+    initialize_listeners
   end
 
   def rsync(*args)
@@ -41,6 +39,14 @@ class Syncr
     listeners.each { |name, listener| listener.stop }
   end
 private
+  def initialize_listeners
+    unless @listeners
+      @listeners = {}
+      @listeners[:local] = Listen.to(options[:local], &listen_callback(options[:local], options[:external]))
+      @listeners[:external] = Listen.to(options[:external], &listen_callback(options[:external], options[:local])) if options[:two_way_sync]
+    end
+  end
+
   def listen_callback(*args)
     Proc.new do |modified, added, removed|
       log "modified absolute path: #{modified}"
