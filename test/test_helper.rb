@@ -1,6 +1,14 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'syncr'
 
+if RUBY_PLATFORM == "java"
+  require 'simplecov'
+  SimpleCov.start
+else
+  require "codeclimate-test-reporter"
+  CodeClimate::TestReporter.start
+end
+
 gem 'minitest'
 require 'minitest/autorun'
 require 'minitest/spec'
