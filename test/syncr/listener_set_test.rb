@@ -28,6 +28,24 @@ describe Syncr::ListenerSet do
     end
   end
 
+  describe '#action' do
+    before do
+      @set = Syncr::ListenerSet.new do |from, to|
+        puts "initial action"
+      end
+    end
+
+    it 'should change the callback' do
+      new_action = proc do |from, to|
+        puts "Changed action"
+      end
+
+      @set.action &new_action
+      
+      assert_equal new_action, @set.action
+    end
+  end
+
   describe '#add_listener' do
     it 'should add listener to listeners' do
       before_size = @set.listeners.size
@@ -110,6 +128,6 @@ describe Syncr::ListenerSet do
   describe '#size' do
     it 'should return listeners length' do
       assert_equal @set.listeners.size, @set.size
-    end 
+    end
   end
 end
