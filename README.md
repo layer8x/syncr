@@ -4,6 +4,8 @@ a sort-of front-end for Rsync
 
 [![Build Status](https://travis-ci.org/layer8x/syncr.svg)](https://travis-ci.org/layer8x/syncr)
 [![Stories in Ready](https://badge.waffle.io/layer8x/syncr.png?label=ready&title=Ready)](https://waffle.io/layer8x/syncr)
+[![Code Climate](https://codeclimate.com/github/layer8x/syncr/badges/gpa.svg)](https://codeclimate.com/github/layer8x/syncr)
+[![Test Coverage](https://codeclimate.com/github/layer8x/syncr/badges/coverage.svg)](https://codeclimate.com/github/layer8x/syncr/coverage)
 
 ## Installation
 
