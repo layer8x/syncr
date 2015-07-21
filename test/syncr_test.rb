@@ -1,10 +1,6 @@
 require 'test_helper'
 
 describe Syncr do
-  it 'should have a version number' do
-    refute_nil ::Syncr::VERSION
-  end
-
   describe 'class methods' do
     describe '::rsync' do
       before do
