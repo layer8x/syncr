@@ -1,5 +1,5 @@
 require "syncr/version"
-require 'listen'
+require "syncr/listener_set"
 
 class Syncr
   class << self
@@ -16,15 +16,16 @@ class Syncr
   attr_reader :listeners
   attr_accessor :options
 
-  [:local, :external].each do |type|
-    define_method("#{type}_directory".intern) { options[type] }
-    define_method("#{type}_directory=".intern) { |new_dir| options[type] = new_dir }
-  end
-
   def initialize(options={})
     raise ArgumentError, "Requires local and external directories to sync" unless options[:local] && options[:external]
     @options = options
-    initialize_listeners
+
+    @listeners = ListenerSet.new do |from, to|
+      rsync from, to
+    end
+
+    @listeners.add_listener(:local, options[:local], options[:external])
+    @listeners.add_listener(:external, options[:external], options[:local]) if options[:two_way_sync]
   end
 
   def rsync(*args)
@@ -32,30 +33,13 @@ class Syncr
   end
 
   def start
-    listeners.each { |name, listener| listener.start }
+    @listeners.start
   end
 
   def stop
-    listeners.each { |name, listener| listener.stop }
+    @listeners.stop
   end
 private
-  def initialize_listeners
-    unless @listeners
-      @listeners = {}
-      @listeners[:local] = Listen.to(options[:local], &listen_callback(options[:local], options[:external]))
-      @listeners[:external] = Listen.to(options[:external], &listen_callback(options[:external], options[:local])) if options[:two_way_sync]
-    end
-  end
-
-  def listen_callback(*args)
-    Proc.new do |modified, added, removed|
-      log "modified absolute path: #{modified}"
-      log "added absolute path: #{added}"
-      log "removed absolute path: #{removed}"
-      rsync args.first, to: args.last
-    end
-  end
-
   def log(m)
     puts "#{Time.now.strftime("%F %T")}> #{m}"
   end
