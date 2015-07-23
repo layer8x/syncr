@@ -20,6 +20,11 @@ module Syncr
     Listener.new(*args)
   end
 
+  def listen(*args)
+    Listener.new(*args).start
+  end
+
+  # Deprecated output helper thing
   def deprecated(old, new)
     STDERR.puts "WARNING: #{old} is deprecated. Use #{new}"
   end
