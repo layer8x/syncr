@@ -11,7 +11,7 @@ module Syncr
   # Deprecated. See Syncr::Listener::start
   def start(*args)
     deprecated "Syncr::start", "Syncr::Listener::start"
-    Listener.new(*args).start
+    Listener.start(*args)
   end
 
   # Deprecated. See Syncr::Listener#initialize
@@ -21,11 +21,11 @@ module Syncr
   end
 
   def listen(*args)
-    Listener.new(*args).start
+    Listener.start(*args)
   end
 
   # Deprecated output helper thing
   def deprecated(old, new)
-    STDERR.puts "WARNING: #{old} is deprecated. Use #{new}"
+    $stderr.puts "WARNING: #{old} is deprecated. Use #{new}"
   end
 end
