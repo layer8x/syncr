@@ -6,7 +6,9 @@ module Syncr
   class Listener < Rsync
     # Instantiates and starts new Listener instance. See #initialize for arguments.
     def self.start(*args)
-      self.class.new(*args).start
+      listener = new(*args)
+      listener.start
+      listener
     end
 
     # [ListenerSet] Currently used instance of ListenerSet
