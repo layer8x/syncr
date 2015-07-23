@@ -12,6 +12,7 @@ require 'syncr'
 gem 'minitest'
 require 'minitest/autorun'
 require 'minitest/spec'
+require 'purdytest'
 require 'pry'
 require 'fileutils'
 
