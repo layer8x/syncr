@@ -1,0 +1,7 @@
+<div class="card-panel alert-card alert-danger">
+  <div class="row valign-wrapper">
+    <div class="col s1">
+      <i class="circle fa fa-times-circle fa-2x"></i>
+    </div>
+    <div class="col s11">
+      <span class="black-text">
