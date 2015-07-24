@@ -9,9 +9,9 @@
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link href="/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="/css/main.css" type="text/css" rel="stylesheet" />
-  <link href="/css/syntax.css" type="text/css" rel="stylesheet" />
+  <link href="{{ "/css/materialize.min.css" | prepend: site.baseurl }}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{{ "/css/main.css" | prepend: site.baseurl }}" type="text/css" rel="stylesheet" />
+  <link href="{{ "/css/syntax.css" | prepend: site.baseurl }}" type="text/css" rel="stylesheet" />
 </head>
 <body>
   <nav class="amber darken-4" role="navigation">
@@ -25,13 +25,15 @@
 
       </a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="/why-syncr.html"><i class="left fa fa-question-circle"></i> FAQ</a></li>
+        <li><a href="{{ "/why-syncr.html" | prepend: site.baseurl}}"><i class="left fa fa-question-circle"></i> FAQ</a></li>
         <li><a href="https://github.com/layer8x/syncr"><i class="left fa fa-github"></i> GitHub</a></li>
-        <li><a href="/features"><i class="left fa fa-plus-circle"></i> Features</a></li>
+        <li><a href="{{ "/features" | prepend: site.baseurl}}"><i class="left fa fa-plus-circle"></i> Features</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
+        <li><a href="{{ "/why-syncr.html" | prepend: site.baseurl}}"><i class="left fa fa-question-circle"></i> FAQ</a></li>
+        <li><a href="https://github.com/layer8x/syncr"><i class="left fa fa-github"></i> GitHub</a></li>
+        <li><a href="{{ "/features" | prepend: site.baseurl}}"><i class="left fa fa-plus-circle"></i> Features</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
