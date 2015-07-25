@@ -1,4 +1,6 @@
 $(function () {
+  $(".button-collapse").sideNav();
+
   var top_block = $('#logo-block-top');
   var bottom_block = $('#logo-block-bottom');
 

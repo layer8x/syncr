@@ -22,20 +22,15 @@
         <div id="logo-text">
           <span>Syncr</span>
         </div>
-
       </a>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="fa fa-bars"></i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="{{ "/why-syncr.html" | prepend: site.baseurl}}"><i class="left fa fa-question-circle"></i> FAQ</a></li>
-        <li><a href="https://github.com/layer8x/syncr"><i class="left fa fa-github"></i> GitHub</a></li>
-        <li><a href="{{ "/features" | prepend: site.baseurl}}"><i class="left fa fa-plus-circle"></i> Features</a></li>
+        {% include nav_links.html %}
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-        <li><a href="{{ "/why-syncr.html" | prepend: site.baseurl}}"><i class="left fa fa-question-circle"></i> FAQ</a></li>
-        <li><a href="https://github.com/layer8x/syncr"><i class="left fa fa-github"></i> GitHub</a></li>
-        <li><a href="{{ "/features" | prepend: site.baseurl}}"><i class="left fa fa-plus-circle"></i> Features</a></li>
+        {% include nav_links.html %}
       </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
   {{ content }}
@@ -50,7 +45,7 @@
             Syncr as well as every Layer8x project is made possible by the Open Source community. Please give back to the community.
           </p>
         </div>
-        <div class="col l4 offset-l2 s12 white-text">
+        <div class="col l4 offset-l2 s4 offset-s2 white-text">
           <h5>Links</h5>
           <ul>
             <li><a href="http://www.rubydoc.info/github/layer8x/syncr/master/Syncr">RubyDocs</a></li>
