@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: flow
 ---
 
 # Installing Ruby
