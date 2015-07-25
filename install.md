@@ -7,6 +7,7 @@ Syncr is distributed as a RubyGem, and as such you will need Ruby as well as Rub
 
 ## Linux
 Your distribution's package manager _should_ have Ruby in it. When installing Ruby remember that Syncr requires 1.9 Ruby; some distributions still ship with 1.8 in the package manager. If you have confirmed that your distribution's package manager has at least 1.9 Ruby, simply install Ruby. RubyGems ships with Ruby by default but some package managers extract RubyGems into its own package usually called `ruby-rubygems` or just `rubygems`.
+
 {% include code_begin %}
 {% highlight bash %}
 [sudo] apt-get install ruby
@@ -28,6 +29,7 @@ Syncr currently doesn't support Windows and Ruby support on Windows is flaky. I'
 
 ## RVM
 [RVM](https://rvm.io/) works on most, if not all, Unixes (Unics?, Unixs?). Open a Terminal window and paste this in. Always be careful of pasting commands from the internet into your terminal prompt.
+
 {% include code_begin %}
 {% highlight bash %}
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
