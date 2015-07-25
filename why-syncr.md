@@ -1,5 +1,5 @@
 ---
-layout: flow-text
+layout: flow
 ---
 
 Why Syncr?
